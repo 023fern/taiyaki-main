@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ร้านขนมปังปลา</title>
+    <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 20px;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        .menu-item img {
+            width: 200px; 
+            height:200px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-right: 15px;}
+            div {
+  width:500px;
+  margin:auto;
+}
+        .header {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .menu-item {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            padding: 15px;
+            display: flex;
+            
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .menu-item:nth-child(even) {
+            background-color: #f0f8ff;
+        }
+        .menu-item span {
+            font-size: 20px;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+</head>
+<body>
+    <div id="app">
+        <div class="header" >ไทยากิ MINI ปังปลา</div>
+      
+        <div v-for="item in items" :key="item.id" class="menu-item">
+            <img :src="item.image">
+            <span>{{ item.name }}</span>
+            <span>{{ item.price }}</span>
+        </div>
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                items: [
+                    { id: 1, name: 'ไส้วนิลา', price: '10 บาท' , image: '/images/v6_5.png'},
+                    { id: 2, name: 'ไส้ช็อคโกแลต', price: '10 บาท' , image: '/images/v6_10.png'},
+                    { id: 3, name: 'วอฟเฟิวไส้กรอก', price: '10 บาท' , image: '/images/v6_14.png'},
+                    { id: 4, name: 'ไส้โอริโอ', price: '10 บาท', image: '/images/v6_18.png' },
+                    { id: 5, name: 'ไส้ชาเขียว', price: '10 บาท', image: '/images/v6_37.png' },
+                    { id: 6, name: 'ไส้สังขยาใบเตย', price: '10 บาท' , image: '/images/v6_49.png'},
+                    { id: 7, name: 'ไส้นมสดฮอกไกโด', price: '10 บาท' , image: '/images/v6_53.png'},
+                    { id: 8, name: 'ไส้ชีส', price: '10 บาท', image: '/images/v6_57.png' },
+                    { id: 9, name: 'ไส้คัสตาร์ดไข่เค็ม', price: '10 บาท', image: '/images/v6_41.png' },
+                    { id: 10, name: 'ไส้ถั่วแดง', price: '10 บาท', image: '/images/v6_45.png' },
+                    { id: 11, name: 'ไส้เนยถั่ว', price: '10 บาท' , image: '/images/v6_22.png'},
+                    { id: 12, name: 'ไส้มันม่วง', price: '10 บาท' , image: '/images/v6_26.png'},
+ 
+                ]
+            
+                
+                
+            }
+        });
+    </script>
+</body>
+</html>
